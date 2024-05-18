@@ -126,6 +126,6 @@ public class UsuariosController(IdentityContext context, UserManager<CustomIdent
     private string GetUserRol(CustomIdentityUser usuario)
     {
         var roles = userManager.GetRolesAsync(usuario).Result;
-        return roles.First();
+        return roles.FirstOrDefault();
     }
 }
